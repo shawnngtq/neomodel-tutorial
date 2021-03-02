@@ -25,7 +25,7 @@ conda env create -f environment.yml
 conda activate neomodel-tutorial
 
 # create database models and constraints
-neomodel_install_labels --db bolt://<database_name>:<database_password>@localhost:7687 models.py
+neomodel_install_labels --db bolt://<neo4j_database_name>:<neo4j_database_password>@localhost:7687 models.py
 
 # execute script
 python app.py

@@ -1,5 +1,4 @@
 """
-This code defines the object structures for Team Member, Skill, and the relationship between those two.
 Use the following commands to create these definitions in neo4j.
 neomodel_install_labels --db bolt://neo4j:tester@localhost:7687 models.py
 """
@@ -36,7 +35,5 @@ class TeamMember(StructuredNode):
     # This demonstrates creation of email address based on provided first_name and last_name. The user doesn't have
     # to provide an email address while creating a team member.
     def pre_save(self):
-        # self.email = self.first_name + "." + self.last_name + "@" + "acme.com"
-        # self.name = self.last_name + "," + self.first_name
         self.email = f"{self.first_name}.{self.last_name}@acme.com"
         self.name = f"{self.last_name},{self.first_name}"
